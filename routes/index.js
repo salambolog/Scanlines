@@ -1,6 +1,6 @@
 var express = require('express');
 var Router = express.Router();
-var signup = require('./signup');
+// var signup = require('./signup');
 
 /* GET home page. */
 Router.get('/', function(req, res, next) {
@@ -10,6 +10,10 @@ Router.get('/', function(req, res, next) {
 // GET /signup
 Router.get('/signup', function(req, res, next) {
   res.render('signup', { message: req.flash() });
+});
+
+Router.get('/login', function(req, res, next) {
+  res.render('login');
 });
 
 //     function signupAuthenticate(req, res, next) {

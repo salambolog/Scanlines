@@ -332,17 +332,19 @@ body {
   left: 0;
   /*background: rgba(255,255,255,1);*/
   /*background-color: #2B2A2A;*/
-  background-image: url('../images/segatexture.jpg');
+  background-image: url("../images/segatexture.jpg");
   z-index: 100;
-  -webkit-box-shadow: 0px 0px 20px rgba(44, 44, 44, .3);
+  -webkit-box-shadow: 0px 0px 20px rgba(44, 44, 44, 0.3);
   text-decoration: none;
   color: white;
-  a:-webkit-any-link {
-    color: -webkit-link;
-    text-decoration: none;
-    cursor: auto;
-    color: white;
-  }
+
+}
+
+#nav a:-webkit-any-link {
+  color: -webkit-link;
+  text-decoration: none;
+  cursor: auto;
+  color: white;
 }
 
 #nav #logo {
@@ -372,13 +374,6 @@ body {
 
 .content h1 {
   color: white;
-}
-
-h1::first-letter {
-  font-size: 60px;
-  font-weight: 600;
-  color: black;
-  padding-left: 20px;
 }
 
 .NAVILIST {

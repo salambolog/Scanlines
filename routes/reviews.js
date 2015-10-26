@@ -1,4 +1,5 @@
 var express = require('express');
+var passport = require('passport');
 var Router = express.Router();
 
 

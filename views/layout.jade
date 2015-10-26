@@ -1,5 +1,7 @@
 //- layout.jade
-html
+!!! 5
+doctype html
+html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
@@ -12,6 +14,19 @@ html
     script(src='javascripts/jquery.stellar.js')
     script(src='javascripts/scrip.js')
     script(src='javascripts/jquery.nicescroll.js')
-    title
-    link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    #nav
+      ul
+        li.NAVILIST
+          a(href='/login')  |Login
+        li.NAVILIST
+          a(href='/signup') |Signup
+        li.NAVILIST
+          a(href='/reviews') |Reviews
+        #scanlines
+          li.NAVILIST
+            a(href='/') ((logo))
+    #wall_1.image(data-stellar-background-ratio='0.4')
+       //- .Cameo
+       //-    .text.animated.bounce
+       //-        img(src='images/CameoDarken.png')

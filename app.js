@@ -10,10 +10,8 @@ var Router = express.Router();
 
 // var expressLayouts = require('express-ejs-layouts');
 
-var login = require('./routes/login');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var signup = require('./routes/signup');
 var reviews = require('./routes/reviews');
 
 
@@ -33,9 +31,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // routes.extendExpress4(app);
 
-app.use('/login', login);
+
 app.use('/users', users);
-app.use('/signup', signup);
 app.use('/reviews', reviews);
 app.use('/', routes);
 
