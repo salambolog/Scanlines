@@ -1,9 +1,12 @@
 var express = require('express');
-var router = express.Router();
+var Router = express.Router();
+
+
+//  / = /reviews,  /:id = /reviews/:id
 
 /* GET SIGNUP page. */
-router.get('/reviews', function(req, res, next) {
+Router.get('/', function(req, res, next) {
   res.render('reviews', { title: 'Express' });
 });
 
-module.exports = router;
+module.exports = Router;

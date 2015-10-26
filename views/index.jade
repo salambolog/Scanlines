@@ -13,35 +13,29 @@ html(lang='en')
     script(src='javascripts/scrip.js')
     script(src='javascripts/jquery.nicescroll.js')
   body
-    #nav
-      nav
+      #nav
         ul
           li.NAVILIST
-            a(href='/login') Login
+            a(href='/login')|Login
           li.NAVILIST
-            a(href='/signup') Sign Up
+            a(href='/signup')|Signup
           li.NAVILIST
-            a(href='/reviews') Reviews
+            a(href='/reviews')|Reviews
           #scanlines
             li.NAVILIST
                 a(href='/') ((logo))
     #wall_1.image(data-stellar-background-ratio='0.4')
        .Cameo
-        img(src='images/CameoDarken.png')
+          .text.animated.bounce
+              img(src='images/CameoDarken.png')
     #content_1.content
-      h1 Welcome to Scanlines_
+      h2 Welcome to Scanlines_
       p
         | The world of web reviews is growing. In no time at all, gaming journalists are leaving their tedious jobs and making a living doing what they love. It all started with AVGN (the Angry Video Game Nerd) and has since branched into everyone from Jontron to Videogamedunkey. There are many styles to develop. However, all of these internet personalities have one thing in common: they achieved their goals by listening to their fanbase.
 
         | Thanks to Scanlines, a community-based application, those that need affirmation and criticism will get both. Say what you want and mean what you say. As a member, "put up ya dooks" by showing what you're capable of. Post links in your comments to reference and back up your claims. Good luck and have fun doing what you love, because we all know that the 9-5 isn't for everyone.
     #wall_2.image(data-stellar-background-ratio='0.4')
-    //- #content_2.content
-        img(src='')
-    #content_2.content
-      h1 CHOOSE YOUR DESTINY!!
-      p
-        | {{Add your pc image, and console[[maybe add a retro system]]}}
-    #wall_3.image(data-stellar-background-ratio='0.4')
+
 
 
 
