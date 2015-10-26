@@ -1,3 +1,10 @@
+.box {
+  height: 200px;
+  width: 400px;
+  border-color: white;
+  background-color: pink;
+}
+
 /*ANIMATIONSTARTSHEREANDNOW*/
 
 .view {
