@@ -14,17 +14,21 @@ html(lang='en')
     script(src='javascripts/scrip.js')
     script(src='javascripts/jquery.nicescroll.js')
   body
-    #nav
-      ul
-        li.NAVILIST
-          a(href='/login')  |Login
-        li.NAVILIST
-          a(href='/signup') |Signup
-        li.NAVILIST
-          a(href='/reviews') |Reviews
-        #scanlines
-          li.NAVILIST
-            a(href='/') ((logo))
+    html
+  body
+    menu
+      li
+        a(href='/reviews')
+          span R
+          span Reviews
+      li#at
+        a(href='/signup')
+          span S
+          span Signup
+      li
+        a(href='/login')
+          span L
+          span Login
+
     #wall_1.image(data-stellar-background-ratio='0.4')
-        .box
 

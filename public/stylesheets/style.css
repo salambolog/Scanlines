@@ -1,10 +1,222 @@
-.box {
-  height: 200px;
-  width: 400px;
-  border-color: white;
-  background-color: pink;
+#cf2 {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+#cf2 img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
+#cf2 img.transparent {
+opacity:0;
+}
+#cf_onclick {
+cursor:pointer;
+}
+
+/*Navigation*/
+
+* {
+  padding : 0;
+  margin  : 0;
+  border  : 0;
+}
+
+*:after , *:before {
+  display : block;
+  content : "";
+  position: absolute;
+}
+
+body {
+  background-color : #3d332a;
+  background-image : url('http://mojoimage.com/free-image-hosting-12/9690bg.jpg');
+  padding-top     : 50px;
+}
+
+nav {
+  width : 476px;
+  margin: auto;
+  position : relative;
+}
+
+menu:after , menu:before {
+  top       : 0;
+  width     : 60px;
+  height    : 76px;
+  background: #eae2d5;
+}
+
+menu:after {
+  clear : both;
+  right : -61px;
+  border-right : 1px solid #857e74;
+}
+
+menu:before {
+  left  : -55px;
+  border-left : 1px solid #857e74;
+}
+
+.ribbon {
+  position : absolute;
+  top      : 76px;
+  border-style : solid ;
+  border-width : 13px;
+}
+
+.ribbon.left {
+  left     : -55px;
+  border-color : #857e74 #857e74 transparent transparent;
+}
+
+.ribbon.right {
+  left         : 511px;
+  border-color : #857e74 transparent transparent #857e74;
+}
+
+.left:after , .left:before {
+  left     : -68px;
+  border-style : solid;
+  z-index : -2;
+}
+
+.left:after {
+  top      : -68px;
+  border-width : 58px 0 0 56px;
+  border-color : #eae2d5 transparent transparent transparent;
+}
+
+.left:before {
+  top      : -26px;
+  border-width : 0 40px 38px 41px;
+  border-color : transparent transparent #eae2d5 transparent;
+}
+
+.right:after , .right:before {
+  right    : -65px;
+  border-style : solid;
+  z-index : -2;
+}
+
+.right:before {
+  top      : -25px;
+  border-width : 0 40px 38px 38px;
+  border-color : transparent transparent #eae2d5 transparent;
+}
+
+.right:after {
+  top      : -65px;
+  border-width : 58px 56px 0 0;
+  border-color : #eae2d5 transparent transparent transparent;
+}
+
+li {
+  float       : left;
+  position    : relative;
+  margin-left : 33px;
+  cursor      : pointer;
+  background-color   : #eae2d5;
+  list-style-type    : none;
+  border-left        : 2px solid #d7cfc2;
+  border-right       : 2px solid #d7cfc2;
+  transition : margin .1s ,padding .1s ,border 1s;
+}
+
+li:first-child {
+  margin-left : 20px;
+}
+
+li:before , li:after {
+  display    : block;
+  position   : absolute;
+  top        : 0;
+  width      : 20px;
+  height     : 100%;
+  background : inherit;
+  transition : all .1s;
+}
+
+li:before {
+  right : 100%;
+}
+
+li:after {
+  left : 100%;
+}
+li:hover {
+  margin-top           : -9px;
+  box-shadow         : 0 4px 10px 0px #000;
+  transition : margin .2s ,padding .2s;
+}
+
+li:hover:before , li:hover:after {
+  height : 86%;
+  background         : #d7cfc2;
+  transition : all .2s;
+}
+
+li:hover:before {
+  transform : rotate(-30deg) skew(-30deg) translate(1.5px,9px);
+}
+
+li:hover:after {
+  transform : rotate(30deg) skew(30deg) translate(-1.5px,9px);
+}
+
+a {
+  display : block;
+  padding : 10px 15px;
+  text-decoration : none;
+  text-align      : center
+}
+
+a span {
+  text-shadow : 1px 1px 1px #FFF;
+  color       : #857e74;
+  transition  : all .2s;
+}
+
+a span:first-child {
+  font-family : icon;
+  font-size   : 33px;
+  display     : block;
+}
+
+a span:last-child {
+  text-transform : capitalize;
+  font-family    : 'Georgia';
+  font-size      : 11px;
+  letter-spacing : 1px;
+  font-style     : italic;
+  color        : #6488ba;
+}
+
+li:hover span {
+  transition : all .2s;
+}
+
+li:hover a span:first-child {
+  color : #6488ba;
+  text-shadow  : 1px 1px 1px #FFF , 0 0 1px #6488ba;
+}
+
+li:hover a span:last-child {
+  color : #857e74;
+}
+
+@font-face {
+  font-family :icon;
+  src: url('http://bennettfeely.com/fonts/icons.woff');
+}
+
+/*END NAVIGATION*/
 /*ANIMATIONSTARTSHEREANDNOW*/
 
 .view {
@@ -238,10 +450,21 @@ body {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-  40% {transform: translateY(-90px);}
-  60% {transform: translateY(-5px);}
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-90px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
+
 .bounce {
   animation-name: bounce;
 }
@@ -306,7 +529,7 @@ body {
 }
 
 #wall_1 {
-  background: url(../Images/retro.jpg) repeat;
+  background: url(../Images/cutcube.png) repeat;
   background-attachment: fixed;
 }
 
@@ -338,13 +561,12 @@ body {
   top: 0;
   left: 0;
   /*background: rgba(255,255,255,1);*/
-  /*background-color: #2B2A2A;*/
-  background-image: url("../images/segatexture.jpg");
+  background-color: #eae2d5;
+  /*background-image: url("../images/segatexture.jpg");*/
   z-index: 100;
   -webkit-box-shadow: 0px 0px 20px rgba(44, 44, 44, 0.3);
   text-decoration: none;
   color: white;
-
 }
 
 #nav a:-webkit-any-link {
@@ -394,7 +616,7 @@ body {
 }
 
 .reviews {
-    margin-left:
+  margin-left:
 }
 
 .signup {
