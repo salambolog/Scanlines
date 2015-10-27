@@ -34,12 +34,6 @@ cursor:pointer;
   position: absolute;
 }
 
-body {
-  background-color : #3d332a;
-  background-image : url('http://mojoimage.com/free-image-hosting-12/9690bg.jpg');
-  padding-top     : 50px;
-}
-
 nav {
   width : 476px;
   margin: auto;
