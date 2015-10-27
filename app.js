@@ -13,12 +13,15 @@ var Router = express.Router();
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var reviews = require('./routes/reviews');
+app.engine('html', require('ejs').renderFile);
 
 
 // view engine setup
 app.set('port',process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'html');
+app.use(express.static(path.join(__dirname, 'public')));
+
 // app.use(expressLayouts);
 
 
