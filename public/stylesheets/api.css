@@ -1,0 +1,27 @@
+.pre-sign-in {
+  float: right;
+  margin-right: 20px;
+  margin-top: 92px;
+}
+
+#APWHY {
+  margin-left: 30%;
+  margin-right: 25%;
+  padding-top: 19%;
+}
+
+#main {
+  width: 700px;
+  height: 700px;
+  border-radius: 500px;
+  -webkit-border-radius: 500px;
+  background: #DD4B39;
+  color: #fff;
+  border-color: #BB3F30;
+  /*margin: auto;*/
+}
+
+#main p {
+  margin: 170px 0px 0px 0px;
+  font-size: 8px;
+}

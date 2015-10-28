@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/api.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
   <script src="javascripts/jquery.stellar.js"></script>
   <script src="javascripts/scrip.js"></script>
@@ -17,39 +18,77 @@
 
 <body>
   <div id="nav">
+    <span id="signinButton" class="pre-sign-in">
+      <!-- IMPORTANT: Replace the value of the <code>data-clientid</code>
+           attribute in the following tag with your project's client ID. -->
+      <span
+        class="g-signin"
+        data-callback="signinCallback"
+        data-clientid="475395266099-unerai05pbtu1o8cuoldjmlcgmr10hbn.apps.googleusercontent.com"
+        data-cookiepolicy="single_host_origin"
+        data-scope="https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube">
+      </span>
+    </span>
     <ul>
+      <li class="NAVILIST"><a href="/">|Scanlines</a></li>
+      <li class="NAVILIST"><a href="/reviews">|Reviews</a></li>
       <li class="NAVILIST"><a href="/login"> |Login</a></li>
       <li class="NAVILIST"><a href="/signup">|Signup</a></li>
-      <li class="NAVILIST"><a href="/reviews">|Reviews</a></li>
-      <div id="scanlines">
-        <li class="NAVILIST"><a href="/">((logo))</a></li>
-      </div>
     </ul>
   </div>
   <div id="wall_1" data-stellar-background-ratio="0.4" class="image">
-    <div class="giant">
-    <!--   <h3>Upload Your Video</h3>
-          <input class="video" type="file">
-     Title<input class="videoForm" type="form"></input>
-          <input class="videoForm" type="form"></input>
-          <input class="videoForm" type="form"></input> -->
+    <div id="main">
+    <div class="text animated bounce">
+        <div id="APWHY">
 
-          <div id="login-container" class="pre-auth">
-      This application requires access to your YouTube account.
-      Please <a href="#" id="login-link">authorize</a> to continue.
+        <div sscla="post-sign-in">
+          <div>
+            <img id="channel-thumbnail">
+            <span id="channel-name"></span>
+          </div>
+          <div>
+            <label for="title">Title:<br><br></label>
+            <input id="title" type="text" value="Default Title">
+          </div>
+          <br>
+          <div>
+            <label for="description">Description:<br><br></label>
+            <textarea id="description">Default description</textarea>
+          </div>
+          <br>
+          <div>
+            <label for="privacy-status">Privacy Status:</label>
+            <select id="privacy-status"><br>
+              <option>public</option>
+              <option>unlisted</option>
+              <option>private</option>
+            </select>
+          </div>
+          <div>
+          <br>
+            <input input type="file" id="file" class="button" accept="video/*">
+            <button id="button">Upload Video</button>
+            <div class="during-upload">
+              <br>
+              <p><span id="percent-transferred"></span>% done (<span id="bytes-transferred"></span>/<span id="total-bytes"></span> bytes)</p>
+              <progress id="upload-progress" max="1" value="0"></progress>
+            </div>
+            <br>
+            <div class="post-upload">
+              <p>Uploaded video with id <span id="video-id"></span>. Polling for status...</p>
+              <ul id="post-upload-status"></ul>
+              <div id="player"></div>
+            </div>
+            <p id="disclaimer">By uploading a video, you certify that you own all rights to the content or that you are authorized by the owner to make the content publicly available on YouTube, and that it otherwise complies with the YouTube Terms of Service located at <a href="http://www.youtube.com/t/terms" target="_blank">http://www.youtube.com/t/terms</a></p>
+          </div>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+          <script src="//apis.google.com/js/client:plusone.js"></script>
+          <script src="cors_upload.js"></script>
+          <script src="upload_video.js"></script>
+        </div>
+      </div>
     </div>
-    <div id="video-container"></div>
-    <div class="button-container">
-      <button id="prev-button" class="paging-button" onclick="previousPage();">Previous</button>
-      <button id="next-button" class="paging-button" onclick="nextPage();">Next</button>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script type="text/javascript" src="controller/auth.js"></script>
-    <script type="text/javascript" src="controller/my_uploads.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-
-    </div>
-  </div>
 </body>
 
 </html>
