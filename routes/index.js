@@ -9,12 +9,12 @@ Router.get('/', function(req, res, next) {
 
 // GET /signup
 Router.get('/signup', function(req, res, next) {
-  res.render('signup', { message: req.flash() });
+  res.render('signup');
 });
 
 //GET /login
-Router.get('/login', function(req, res, next) {
-  res.render('login');
+Router.get('/lounge', function(req, res, next) {
+  res.render('lounge');
 });
 
 //     function signupAuthenticate(req, res, next) {

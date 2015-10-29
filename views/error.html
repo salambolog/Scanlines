@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -12,26 +12,73 @@
     <script src="javascripts/jquery.stellar.js"></script>
     <script src="javascripts/scrip.js"></script>
     <script src="javascripts/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+    <script type= "text/javascript">
+    function getYouTubeInfo() {
+            $.ajax({
+                    url: "http://gdata.youtube.com/feeds/api/videos/https://youtu.be/IyDQsd3w0gM?list=RDYy72xp47mpQ?v=2&alt=json",
+                    dataType: "jsonp",
+                    success: function (data) { parseresults(data); }
+            });
+    }
+
+    function parseresults(data) {
+            var title = data.entry.title.$t;
+            var description = data.entry.media$group.media$description.$t;
+            var viewcount = data.entry.yt$statistics.viewCount;
+            var author = data.entry.author[0].name.$t;
+            $('#title').html(title);
+            $('#description').html('<b>Description</b>: ' + description);
+            $('#extrainfo').html('<b>Author</b>: ' + author + '<br/><b>Views</b>: ' + viewcount);
+            getComments(data.entry.gd$comments.gd$feedLink.href + '&max-results=50&alt=json', 1);
+    }
+
+    function getComments(commentsURL, startIndex) {
+            $.ajax({
+                    url: commentsURL + '&start-index=' + startIndex,
+                    dataType: "jsonp",
+                    success: function (data) {
+                    $.each(data.feed.entry, function(key, val) {
+                            $('#comments').append('<br/>Author: ' + val.author[0].name.$t + ', Comment: ' + val.content.$t);
+                    });
+                    if ($(data.feed.entry).size() == 50) { getComments(commentsURL, startIndex + 50); }
+                    }
+            });
+    }
+
+    $(document).ready(function () {
+            getYouTubeInfo();
+    });
+    </script>
+    <title>YouTube</title>
   </head>
   <body>
     <div id="nav">
       <ul>
-        <li class="NAVILIST"><a href="/login"> |Login</a></li>
-        <li class="NAVILIST"><a href="/signup">|Signup</a></li>
-        <li class="NAVILIST"><a href="/reviews">|Reviews</a></li>
-        <li class="NAVILIST"><a href="/">|Scanlines</a></li>
+      <li class="NAVILIST"><a href="/">|Scanlines</a></li>
+      <li class="NAVILIST"><a href="/reviews">|Reviews</a></li>
+      <li class="NAVILIST"><a href="/lounge"> |Lounge</a></li>
+      <li class="NAVILIST"><a href="/signup">|Signup</a></li>
+    </ul>
       </ul>
     </div>
+    <div class="trythis">
   <div id="wall_1" data-stellar-background-ratio="0.4" class="image">
 
   </div>
-  <div id="content_1" class="content">
-    <h1>Welcome to Scanlines_</h1>
-    <p>
-      The world of web reviews is growing. In no time at all, gaming journalists are leaving their tedious jobs and making a living doing what they love. It all started with AVGN (the Angry Video Game Nerd) and has since branched into everyone from Jontron to Videogamedunkey. There are many styles to develop. However, all of these internet personalities have one thing in common: they achieved their goals by listening to their fanbase.
-      Thanks to Scanlines, a community-based application, those that need affirmation and criticism will get both. Say what you want and mean what you say. As a member, "put up ya dooks" by showing what you're capable of. Post links in your comments to reference and back up your claims. Good luck and have fun doing what you love, because we all know that the 9-5 isn't for everyone.
-    </p>
+  <div id="content_1" class="content2">
+    <div align="center">
+            <br/><br/>
+            <div id="title" style="color: #dddddd">Could not find a title</div><br/>
+            <iframe title="Youtube Video Player" width="640" height="390" src="http://www.youtube.com/embed/https://youtu.be/IyDQsd3w0gM?list=RDYy72xp47mpQ?fs=1&autoplay=1&loop=0" frameborder="0" allowfullscreen style="border: 1px solid black"></iframe>
+            <br/><br/>
+            <div id="description" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find a description</div>
+            <div id="extrainfo" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find extra information</div>
+            <div id="comments" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find comments</div>
+    </div>
   </div>
   <div id="wall_2" data-stellar-background-ratio="0.4" class="image"></div>
+  </div>
   </body>
 </html>
