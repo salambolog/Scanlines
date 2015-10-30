@@ -628,7 +628,7 @@ body {
 }
 
 #wall_1 {
-  background: url(../images/cutcube.png) repeat;
+  background: url(..public/images/cutcube.png) repeat;
   background-attachment: fixed;
 }
 
