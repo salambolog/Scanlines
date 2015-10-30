@@ -5,15 +5,17 @@ var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var app          = express();
+// var http         = require("http").createServer(app);
 var Router       = express.Router();
 
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var reviews = require('./routes/reviews');
+var routes       = require('./routes/index');
+var users        = require('./routes/users');
+var reviews      = require('./routes/reviews');
 app.engine('html', require('ejs').renderFile);
 
 // view engine setup
+// app.set('ippadr', '96.89.86.225');
 app.set('port',process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
@@ -21,6 +23,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(expressLayouts);
 
+// //Tells server to support JSON requests
+// app.use(bodyParser.json());
+
+//Handle route "GET /", as in "http://localhost:8080/"
+// app.get("/", function(request, response) {
+
+//   //Show a simple response message
+//   response.send("Server is up and running");
+
+// });
+
+//Start the http server at port and IP defined before
+// http.listen(app.get("port"), app.get("ipaddr"), function() {
+//   console.log("Server up and running. Go to http://" + app.get("ipaddr") + ":" + app.get("port"));
+// });
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

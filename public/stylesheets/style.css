@@ -247,7 +247,7 @@ li:after {
   background: #333333;
 }
 
-li:hover {
+/*li:hover {
   margin-top: -9px;
   box-shadow: 0 4px 10px 0px #000;
   transition: margin .2s, padding .2s;
@@ -266,7 +266,7 @@ li:hover:before {
 
 li:hover:after {
   transform: rotate(30deg) skew(30deg) translate(-1.5px, 9px);
-}
+}*/
 
 
 /*BUTTON ANIMATIONS STOP*/
