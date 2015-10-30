@@ -41,16 +41,68 @@
   </div>
   <div class="trythis">
     <div id="wall_1" data-stellar-background-ratio="0.4" class="image">
-      <form action="#">
+      <div id="content_1" class="content">
+        <form action="#">
         <input type="text" id="search" placeholder="type here" autocomplete="off" />
-        <input type="submiy" value="search" class="button">
+        <input type="submit" value="search" class="button">
       </form>
       <div id="results"></div>
-      <div id="content_1" class="content">
         <h1 class="animated fadeInDown">Gaming Journalists</h1>
         <p>The top gaming journalists can be searched from here thanks to Youtube! Get tips and inspiration and chat about it in the lounge area! From the O.G. AVGN to Videogamedunkey, gaming entertainment has come a long way!</p>
       </div>
     </div>
+
+    <script>// API API API API API API
+// API API API API API API
+// API API API API API API
+// API API API API API API
+function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+
+$(function() {
+    $("form").on("submit", function(e) {
+       e.preventDefault();
+       // prepare the request
+       var request = gapi.client.youtube.search.list({
+            part: "snippet",
+            type: "video",
+            q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
+            maxResults: 3,
+            order: "viewCount",
+            publishedAfter: "2015-01-01T00:00:00Z"
+       });
+       // execute the request
+       request.execute(function(response) {
+          var results = response.result;
+          $("#results").html("");
+          $.each(results.items, function(index, item) {
+            $.get("tpl/item.html", function(data) {
+                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+            });
+          });
+          resetVideoHeight();
+       });
+    });
+
+    $(window).on("resize", resetVideoHeight);
+});
+
+function resetVideoHeight() {
+    $(".video").css("height", $("#results").width() * 9/16);
+}
+
+function init() {
+    console.log('init');
+    gapi.client.setApiKey("AIzaSyDeBn89z05DVOhsGwTTV9NIQQAmwL7gd90");
+    gapi.client.load("youtube", "v3", function() {
+      console.log('youtube client has loaded.');
+        // yt api is ready
+    });
+}
+
+
+// OVER OVER OVER OVER OVER OVER
+    </script>
+
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
 

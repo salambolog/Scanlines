@@ -11,6 +11,8 @@ html {
 .button {
   background: #952b2b;
   border-color: #957575;
+  width: 100px;
+  height: 30px;
 }
 
 .button:hover,
@@ -18,6 +20,15 @@ html {
 .button:focus {
   background: #782b2b;
   border-color: #952b2b;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form,
+#results {
+  padding: 0 20px;
 }
 
 .trythis {
