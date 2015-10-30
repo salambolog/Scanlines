@@ -247,6 +247,7 @@ li:after {
   background: #333333;
 }
 
+
 /*li:hover {
   margin-top: -9px;
   box-shadow: 0 4px 10px 0px #000;
@@ -692,13 +693,46 @@ body {
 #content_1 {
   position: relative;
   background-color: #AB4321;
+  transition: background-color 0.5s ease;
 }
 
-.content p {
+#content_1:hover {
+  background-color: #7DC24B;
+}
+
+.visuallyhidden {
+position: absolute;
+overflow: hidden;
+clip: rect(0 0 0 0);
+height: 1px; width: 1px;
+margin: -1px; padding: 0;
+border: 0;
+}
+
+.visuallyhidden:hover {
+position: absolute;
+clip: rect(0 0 0 0);
+height: 1px; width: 1px;
+margin: -1px; padding: 0;
+border: 0;
+}
+
+.conter p {
   color: white;
 }
 
+.content p:hover {
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  transition: color 0.5s ease;
+}
+
 .content h1 {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  transition: color 0.5s ease;
+}
+.content h1:hover{
   color: white;
 }
 
