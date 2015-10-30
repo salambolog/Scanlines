@@ -12,26 +12,26 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/api.css">
   <link rel="stylesheet" href="stylesheets/animate.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-  <script src="//js.pusher.com/3.0/pusher.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
   <script src="javascripts/jquery.stellar.js"></script>
   <script src="javascripts/scrip.js"></script>
   <script src="javascripts/jquery.nicescroll.js"></script>
+  <script type="app.js"></script>
 </head>
 
 <body>
   <div id="nav">
-    <span id="signinButton" class="pre-sign-in">
+    <!-- <span id="signinButton" class="pre-sign-in">
       <!-- IMPORTANT: Replace the value of the <code>data-clientid</code>
            attribute in the following tag with your project's client ID. -->
-      <span
+    <!--  <span
         class="g-signin"
         data-callback="signinCallback"
         data-clientid="475395266099-unerai05pbtu1o8cuoldjmlcgmr10hbn.apps.googleusercontent.com"
         data-cookiepolicy="single_host_origin"
         data-scope="https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube">
       </span>
-    </span>
+    </span> -->
     <ul>
       <li class="NAVILIST animated fadeInDown"><a href="/">|Scanlines</a></li>
       <li class="NAVILIST animated fadeInDown"><a href="/reviews">|Reviews</a></li>
@@ -40,12 +40,18 @@
     </ul>
   </div>
   <div class="trythis">
-  <div id="wall_1" data-stellar-background-ratio="0.4" class="image">
-    <div id="content_1" class="content">
-      <h1 class="animated fadeInDown">Gaming Journalists</h1>
+    <div id="wall_1" data-stellar-background-ratio="0.4" class="image">
+      <form action="#">
+        <input type="text" id="search" placeholder="type here" autocomplete="off" />
+        <input type="submiy" value="search" class="button">
+      </form>
+      <div id="results"></div>
+      <div id="content_1" class="content">
+        <h1 class="animated fadeInDown">Gaming Journalists</h1>
         <p>The top gaming journalists can be searched from here thanks to Youtube! Get tips and inspiration and chat about it in the lounge area! From the O.G. AVGN to Videogamedunkey, gaming entertainment has come a long way!</p>
+      </div>
     </div>
-    </div>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
 
 </html>

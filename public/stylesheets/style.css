@@ -8,6 +8,18 @@ html {
   padding-bottom: 20px;
 }
 
+.button {
+  background: #952b2b;
+  border-color: #957575;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  background: #782b2b;
+  border-color: #952b2b;
+}
+
 .trythis {
   height: 100%;
   width: 1210px;
@@ -726,25 +738,27 @@ body {
 
 .conter p {
   color: transparent;
-  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   transition: color 0.8s ease;
 }
 
 .content p {
   color: transparent;
-  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   transition: color 0.5s ease;
 }
+
 .content p:hover {
   color: white;
 }
 
 .content h1 {
   color: transparent;
-  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   transition: color 0.5s ease;
 }
-.content h1:hover{
+
+.content h1:hover {
   color: white;
 }
 
